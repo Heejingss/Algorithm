@@ -10,24 +10,24 @@ public class Boj_5800 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in)); // 선언
-        int classcount = Integer.parseInt(bf.readLine());
+        int classCount = Integer.parseInt(bf.readLine());
 
         ArrayList<int[]> testList = new ArrayList<int[]>();
         ArrayList<Integer> maxList = new ArrayList<Integer>();
         int temp = 0;
         int max = 0;
 
-        for (int i = 0; i < classcount; i++) {
+        for (int i = 0; i < classCount; i++) {
             String str = bf.readLine();
             String arr[] = str.split(" ");
             int temparr[] = new int[arr.length];
             for (int j = 0; j < arr.length; j++) {
-                temparr[j] = Integer.parseInt(arr[j]);
+                temparr[j] = Integer.parseInt(arr[j]); // 입력 받은 값 정수로 다 변경 (정렬하려고)
             }
             testList.add(temparr);
         }
 
-        for (int i = 0; i < testList.size(); i++) {
+        for (int i = 0; i < testList.size(); i++) { // 정렬
             for (int j = 1; j < testList.get(i).length - 1; j++) {
                 for (int k = j + 1; k < testList.get(i).length; k++) {
                     if (testList.get(i)[j] > testList.get(i)[k]) {
@@ -39,9 +39,9 @@ public class Boj_5800 {
             }
         }
 
-        for (int i = 0; i < testList.size(); i++) {
+        for (int i = 0; i < testList.size(); i++) { // 정렬된 배열에서 largest gap 찾기
             max = 0;
-            for (int j = 0; j < testList.get(i).length - 1; j++) {
+            for (int j = 1; j < testList.get(i).length - 1; j++) {
                 if (testList.get(i)[j + 1] - testList.get(i)[j] > max) {
                     max = testList.get(i)[j + 1] - testList.get(i)[j];
                 }
