@@ -27,6 +27,7 @@ public class Boj_2501 {
             System.out.println(dividerList.get(num2 - 1));
         }
 
+        // 소인수 분해
         // int i = 2;
         // while (i <= num1) {
         // if (num1 % i == 0) {
@@ -36,6 +37,7 @@ public class Boj_2501 {
         // i++;
         // }
 
+        // 유승민
         // int k = num1;
         // for (int i = 2;; i++) {
         // if (i > k / 2) {
