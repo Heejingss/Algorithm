@@ -8,50 +8,27 @@ public class Boj_11651 {
 
         int count = Integer.parseInt(br.readLine());
 
-        ArrayList<int[]> pointList = new ArrayList<>();
+        int[][] list = new int[count][2];
         for (int i = 0; i < count; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int pointX = Integer.parseInt(st.nextToken());
-            int pointY = Integer.parseInt(st.nextToken());
-            int temparr[] = { pointX, pointY };
-            pointList.add(temparr);
+            list[i][0] = Integer.parseInt(st.nextToken());
+            list[i][1] = Integer.parseInt(st.nextToken());
+
         }
-
-        // for (int i = 0; i < count - 1; i++) {
-        // for (int j = i + 1; j < count; j++) {
-        // if (pointList.get(i)[1] > pointList.get(j)[1]) {
-        // int tempY = pointList.get(i)[1];
-        // int tempX = pointList.get(i)[0];
-        // int temparr[] = { tempX, tempY };
-
-        // int tempY2 = pointList.get(j)[1];
-        // int tempX2 = pointList.get(j)[0];
-        // int temparr2[] = { tempX2, tempY2 };
-
-        // pointList.set(i, temparr2);
-        // pointList.set(j, temparr);
-
-        // } else if (pointList.get(i)[1] == pointList.get(j)[1]) {
-        // if (pointList.get(i)[0] > pointList.get(j)[0]) {
-        // int tempY = pointList.get(i)[1];
-        // int tempX = pointList.get(i)[0];
-        // int temparr[] = { tempX, tempY };
-
-        // int tempY2 = pointList.get(j)[1];
-        // int tempX2 = pointList.get(j)[0];
-        // int temparr2[] = { tempX2, tempY2 };
-
-        // pointList.set(i, temparr2);
-        // pointList.set(j, temparr);
-        // }
-        // }
-
-        // }
-        // }
+        Arrays.sort(list, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] s1, int[] s2) {
+                if (s1[1] == s2[1])
+                    return s1[0] - s2[0];
+                else {
+                    return s1[1] - s2[1];
+                }
+            }
+        });
 
         for (int i = 0; i < count; i++) {
-            System.out.print(pointList.get(i)[0] + " ");
-            System.out.println(pointList.get(i)[1]);
+            System.out.print(list[i][0] + " ");
+            System.out.println(list[i][1]);
         }
 
     }
