@@ -25,11 +25,11 @@ public class Boj_11536 {
             }
         });
         int count = 0;
-        int diverseCount = 0;
+        int oppositeCount = 0;
         if (arr[n - 1] == dicArr[0]) {
             for (int i = 1; i < n; i++) {
                 if (arr[n - i - 1] == dicArr[i]) {
-                    diverseCount++;
+                    oppositeCount++;
                 }
             }
         } else if (arr[0] == dicArr[0]) {
@@ -41,7 +41,7 @@ public class Boj_11536 {
         }
         if (count == n - 1) {
             System.out.println("INCREASING");
-        } else if (diverseCount == n - 1) {
+        } else if (oppositeCount == n - 1) {
             System.out.println("DECREASING");
         } else {
             System.out.println("NEITHER");
