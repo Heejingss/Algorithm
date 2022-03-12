@@ -1,8 +1,8 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class Main {
@@ -11,25 +11,17 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int x = Integer.parseInt(st.nextToken());
-        int y = Integer.parseInt(st.nextToken());
-        int w = Integer.parseInt(st.nextToken());
-        int h = Integer.parseInt(st.nextToken());
-
-        int min = 0;
-        if (x > w - x) {
-            min = w - x;
-        } else {
-            min = x;
+        int n = Integer.parseInt(br.readLine());
+        ArrayList<Integer> list = new ArrayList<>();
+        // int[] list = new int[n];
+        for (int i = 0; i < n; i++) {
+            list.add(Integer.parseInt(br.readLine()));
+        }
+        Collections.sort(list);
+        for (int i = 0; i < n; i++) {
+            bw.append(list.get(i) + "\n");
         }
 
-        if ((y > h - y) && (min > h - y)) {
-            min = h - y;
-        } else if ((h - y > y) && (min > y)) {
-            min = y;
-        }
-        bw.append(min + "");
         bw.flush();
         bw.close();
     }
