@@ -12,14 +12,14 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
-        ArrayList<Integer> list = new ArrayList<>();
-        // int[] list = new int[n];
-        for (int i = 0; i < n; i++) {
-            list.add(Integer.parseInt(br.readLine()));
-        }
-        Collections.sort(list);
-        for (int i = 0; i < n; i++) {
-            bw.append(list.get(i) + "\n");
+
+        for (int i = 1; i <= n; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            int sum = a + b;
+            bw.append("Case #" + i + ": " + sum + "\n");
+
         }
 
         bw.flush();
