@@ -4,6 +4,7 @@ import java.util.*;
 public class Boj_1026 {
 
     public static void main(String[] args) throws IOException {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
@@ -28,10 +29,6 @@ public class Boj_1026 {
 
         }
         System.out.print(sum);
-        // for (int i = 0; i < n; i++) {
-
-        // System.out.print(list2.get(i));
-        // }
 
     }
 
