@@ -8,7 +8,6 @@ public class Boj_1541 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         String str = br.readLine();
-
         String[] list = str.split("-");
         ArrayList<Integer> array = new ArrayList<>();
         for (int i = 0; i < list.length; i++) {
