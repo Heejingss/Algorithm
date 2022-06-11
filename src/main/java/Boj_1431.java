@@ -8,7 +8,7 @@ public class Boj_1431 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
         String[][] list = new String[n][2];
-
+        // list
         for (int i = 0; i < n; i++) {
             list[i][0] = br.readLine();
         }
