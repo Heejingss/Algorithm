@@ -13,21 +13,17 @@ public class Boj_1269 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        int count = 0;
+
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
             set.add(Integer.parseInt(st.nextToken()));
         }
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < m; i++) {
-            int a = Integer.parseInt(st.nextToken());
-            if (set.contains(a)) {
-                count++;
-            }
-            set.add(a);
+            set.add(Integer.parseInt(st.nextToken()));
         }
 
-        bw.append(set.size() - count + "");
+        bw.append(2 * set.size() - (n + m) + "");
         bw.flush();
         bw.close();
 
